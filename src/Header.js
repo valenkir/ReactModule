@@ -1,11 +1,12 @@
 import logo from "./assets/images/logo.svg";
 import logoText from "./assets/images/logo-text.svg";
 import Button from "./Button";
+import "./css/Header.scss";
 
 function Header() {
   return (
     <header>
-      <ul className="d-flex justify-space-around align-items-center">
+      <ul className="d-flex Header-container align-items-center">
         <li>
           <img src={logo} alt="Hydra logo" className="me-15" />
           <img src={logoText} alt="Hydra text logo" />

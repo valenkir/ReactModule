@@ -57,6 +57,12 @@ $primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
   color: $secondary-color;
 }
 
+.primary-btn-big {
+  @include btn(214px);
+  border: none;
+  color: $secondary-color;
+}
+
 .secondary-btn {
   @include btn(154px, transparent);
   border: 2px solid $primary-color;
@@ -67,10 +73,6 @@ $primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
   display: flex;
 }
 
-.justify-space-around {
-  justify-content: space-around;
-}
-
 .align-items-center {
   align-items: center;
 }
@@ -79,11 +81,16 @@ $primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
   gap: 40px;
 }
 
+.primary-text {
+  color: $primary-color;
+}
+
 body {
   background-color: $bg-primary;
   font-family: "Montserrat", sans-serif;
   font-size: $fs-default;
   font-weight: 400;
+  box-sizing: border-box;
 }
 
 a {

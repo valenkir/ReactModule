@@ -38,6 +38,16 @@
   color: #000000;
 }
 
+.primary-btn-big {
+  width: 214px;
+  height: 48px;
+  background: linear-gradient(to right, #8176af, #c0b7e8);
+  border-radius: 40px;
+  text-transform: uppercase;
+  border: none;
+  color: #000000;
+}
+
 .secondary-btn {
   width: 154px;
   height: 48px;
@@ -62,6 +72,10 @@
 
 .gap-40 {
   gap: 40px;
+}
+
+.primary-text {
+  color: white;
 }
 
 body {
