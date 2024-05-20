@@ -1,0 +1,21 @@
+@use "sass:color";
+
+.HeroContacts-container {
+  border-radius: 90px;
+  background: radial-gradient(color.adjust(#3a3456, $alpha: -0.05), #211e2e);
+  justify-content: space-evenly;
+  margin: 90px 84px 90px 0;
+  padding: 40px;
+}
+
+.HeroContacts-contact-block {
+  padding: 10px 42px;
+  border-right: 1px solid color.adjust(#c0b7e8, $alpha: -0.33);
+  gap: 20px;
+  &:last-child {
+    border-right: none;
+  }
+  p {
+    margin-top: 10px;
+  }
+}
