@@ -2,3 +2,22 @@
   margin-top: 50px;
   padding-left: 84px;
 }
+
+.App-bg-line {
+  position: absolute;
+  z-index: -1;
+  &-1 {
+    top: 150px;
+    right: 5%;
+  }
+  &-2 {
+    right: 12%;
+  }
+  &-3 {
+    right: 2%;
+    top: 400px;
+  }
+  &-4 {
+    top: 230px;
+  }
+}
