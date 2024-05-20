@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+    format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+@function setResponsiveFontSize($fontSize) {
+  @return clamp($fontSize - 1rem, 0.75rem + 3.5vw, $fontSize);
+}
+
+$fontSizes: (
+  16: 1rem,
+  46: 2.875rem,
+);
+
+@mixin btn($width, $bg-color: $primary-gradient) {
+  width: $width;
+  height: 48px;
+  background: $bg-color;
+  border-radius: 40px;
+  text-transform: uppercase;
+}
+
+@each $name, $fontSize in $fontSizes {
+  .fs-#{$name} {
+    font-size: setResponsiveFontSize($fontSize);
+  }
+}
+
+$fs-default: 0.875rem;
+$bg-primary: #343045;
+$primary-color: #ffff;
+$secondary-color: #000000;
+$primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.ms-84 {
+  margin-right: 84px;
+}
+
+.me-84 {
+  margin-left: 84px;
+}
+
+.me-15 {
+  margin-right: 15px;
+}
+
+.primary-btn {
+  @include btn(154px);
+  border: none;
+  color: $secondary-color;
+}
+
+.secondary-btn {
+  @include btn(154px, transparent);
+  border: 2px solid $primary-color;
+  color: $primary-color;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+body {
+  background-color: $bg-primary;
+  font-family: "Montserrat", sans-serif;
+  font-size: $fs-default;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  text-transform: uppercase;
+}
