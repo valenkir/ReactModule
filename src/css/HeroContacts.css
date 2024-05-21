@@ -1,0 +1,19 @@
+.HeroContacts-container {
+  border-radius: 90px;
+  background: radial-gradient(rgba(58, 52, 86, 0.95), #211e2e);
+  justify-content: space-evenly;
+  margin: 90px 84px 90px 0;
+  padding: 40px;
+}
+
+.HeroContacts-contact-block {
+  padding: 10px 42px;
+  border-right: 1px solid rgba(192, 183, 232, 0.67);
+  gap: 20px;
+}
+.HeroContacts-contact-block:last-child {
+  border-right: none;
+}
+.HeroContacts-contact-block p {
+  margin-top: 10px;
+}/*# sourceMappingURL=HeroContacts.css.map */

@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @font-face {
   font-family: "Montserrat";
   src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
@@ -22,6 +24,11 @@ $fontSizes: (
   background: $bg-color;
   border-radius: 40px;
   text-transform: uppercase;
+  transition: all 150ms ease-in-out;
+  &:hover,
+  &:active {
+    box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
+  }
 }
 
 @each $name, $fontSize in $fontSizes {
@@ -56,12 +63,22 @@ $primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
   @include btn(154px);
   border: none;
   color: $secondary-color;
+  &:hover,
+  &:active {
+    background: transparent;
+    color: $primary-color;
+  }
 }
 
 .primary-btn-big {
   @include btn(214px);
   border: none;
   color: $secondary-color;
+  &:hover,
+  &:active {
+    background: transparent;
+    color: $primary-color;
+  }
 }
 
 .secondary-btn {
@@ -99,4 +116,23 @@ a {
   text-decoration: none;
   color: $primary-color;
   text-transform: uppercase;
+  position: relative;
+  // &::after {
+  //   // content: "";
+  //   // background-color: $primary-color;
+  //   // height: 2px;
+  //   // width: 100%;
+  //   // position: absolute;
+  //   // bottom: -5px;
+  //   // left: 0;
+  //   // transition-duration: 500ms;
+  //   // transition-property: transform;
+  //   // transform: scaleX(0);
+  // }
+  // &:hover:after {
+  //   transform: scaleX(1);
+  // }
+  &:hover {
+    filter: drop-shadow(0 0 10px #c0b7e8);
+  }
 }

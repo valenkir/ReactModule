@@ -1,3 +1,23 @@
 .App-main-container {
   margin-top: 50px;
+  padding-left: 84px;
+}
+
+.App-bg-line {
+  position: absolute;
+  z-index: -1;
+}
+.App-bg-line-1 {
+  top: 150px;
+  right: 5%;
+}
+.App-bg-line-2 {
+  right: 12%;
+}
+.App-bg-line-3 {
+  right: 2%;
+  top: 400px;
+}
+.App-bg-line-4 {
+  top: 230px;
 }/*# sourceMappingURL=App.css.map */
