@@ -3,6 +3,10 @@ import logoText from "./assets/images/logo-text.svg";
 import Button from "./Button";
 import "./css/Header.scss";
 
+const joinHydraClickHandler = () => {
+  console.log("Here should be the contact form");
+};
+
 function Header() {
   return (
     <header>
@@ -33,7 +37,11 @@ function Header() {
               <Button classValue={"secondary-btn"} btnText={"Contact us"} />
             </li>
             <li>
-              <Button classValue={"primary-btn"} btnText={"Join Hydra"} />
+              <Button
+                classValue={"primary-btn"}
+                btnText={"Join Hydra"}
+                handleMouseClick={joinHydraClickHandler}
+              />
             </li>
           </ul>
         </li>

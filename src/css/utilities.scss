@@ -117,21 +117,6 @@ a {
   color: $primary-color;
   text-transform: uppercase;
   position: relative;
-  // &::after {
-  //   // content: "";
-  //   // background-color: $primary-color;
-  //   // height: 2px;
-  //   // width: 100%;
-  //   // position: absolute;
-  //   // bottom: -5px;
-  //   // left: 0;
-  //   // transition-duration: 500ms;
-  //   // transition-property: transform;
-  //   // transform: scaleX(0);
-  // }
-  // &:hover:after {
-  //   transform: scaleX(1);
-  // }
   &:hover {
     filter: drop-shadow(0 0 10px #c0b7e8);
   }

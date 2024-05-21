@@ -1,6 +1,12 @@
-function Button({ classValue, btnText }) {
+function Button({ classValue, btnText, handleMouseClick }) {
   const classes = `fw-bold ${classValue}`;
-  return <button className={classes}>{btnText}</button>;
+  return handleMouseClick ? (
+    <button className={classes} onClick={handleMouseClick}>
+      {btnText}
+    </button>
+  ) : (
+    <button className={classes}>{btnText}</button>
+  );
 }
 
 export default Button;
