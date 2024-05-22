@@ -1,0 +1,19 @@
+@use "./utilities.scss";
+
+body {
+  height: 75vh;
+}
+
+.LoginForm-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  padding: 20px;
+  max-width: 60%;
+  height: 50vh;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  background: utilities.$secondary-gradient;
+  border-radius: 100px;
+}

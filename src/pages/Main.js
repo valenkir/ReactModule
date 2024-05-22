@@ -1,5 +1,5 @@
-import Hero from "./Hero";
-import HeroContacts from "./HeroContacts";
+import Hero from "../components/Hero";
+import HeroContacts from "../components/HeroContacts";
 
 function Main() {
   return (

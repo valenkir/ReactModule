@@ -1,6 +1,137 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+.dark-bg-primary {
+  background: #343045;
+}
+
+.dark-bg-primary-gradient {
+  background: linear-gradient(to right, #8176af, #c0b7e8);
+}
+
+.dark-bg-secondary-gradient {
+  background: radial-gradient(rgba(52, 48, 69, 0.95), #211e2e);
+}
+
+.fs-16 {
+  font-size: clamp(0rem, 0.75rem + 3.5vw, 1rem);
+}
+
+.fs-24 {
+  font-size: clamp(0.5rem, 0.75rem + 3.5vw, 1.5rem);
+}
+
+.fs-46 {
+  font-size: clamp(1.875rem, 0.75rem + 3.5vw, 2.875rem);
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+.ms-84 {
+  margin-right: 84px;
+}
+
+.me-84 {
+  margin-left: 84px;
+}
+
+.me-15 {
+  margin-right: 15px;
+}
+
+.primary-btn {
+  width: 154px;
+  height: 48px;
+  background: linear-gradient(to right, #8176af, #c0b7e8);
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
+  border: none;
+  color: #000000;
+}
+.primary-btn:hover, .primary-btn:active {
+  box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
+}
+.primary-btn:hover, .primary-btn:active {
+  background: transparent;
+  color: white;
+}
+
+.primary-btn-big {
+  width: 214px;
+  height: 48px;
+  background: linear-gradient(to right, #8176af, #c0b7e8);
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
+  border: none;
+  color: #000000;
+}
+.primary-btn-big:hover, .primary-btn-big:active {
+  box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
+}
+.primary-btn-big:hover, .primary-btn-big:active {
+  background: transparent;
+  color: white;
+}
+
+.secondary-btn {
+  width: 154px;
+  height: 48px;
+  background: transparent;
+  border-radius: 40px;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
+  border: 2px solid white;
+  color: white;
+}
+.secondary-btn:hover, .secondary-btn:active {
+  box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.gap-40 {
+  gap: 40px;
+}
+
+.primary-text {
+  color: white;
+}
+
+body {
+  background-color: #343045;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  box-sizing: border-box;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+}
+a:hover {
+  filter: drop-shadow(0 0 10px #c0b7e8);
+}
+
 .HeroContacts-container {
   border-radius: 90px;
-  background: radial-gradient(rgba(58, 52, 86, 0.95), #211e2e);
+  background: radial-gradient(rgba(52, 48, 69, 0.95), #211e2e);
   justify-content: space-evenly;
   margin: 90px 84px 90px 0;
   padding: 40px;

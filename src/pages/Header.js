@@ -1,7 +1,7 @@
-import logo from "./assets/images/logo.svg";
-import logoText from "./assets/images/logo-text.svg";
-import Button from "./Button";
-import "./css/Header.scss";
+import logo from "../assets/images/logo.svg";
+import logoText from "../assets/images/logo-text.svg";
+import Button from "../components/Button";
+import "../css/Header.scss";
 
 const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");

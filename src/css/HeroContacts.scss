@@ -1,8 +1,9 @@
 @use "sass:color";
+@use "./utilities.scss";
 
 .HeroContacts-container {
   border-radius: 90px;
-  background: radial-gradient(color.adjust(#3a3456, $alpha: -0.05), #211e2e);
+  background: utilities.$secondary-gradient;
   justify-content: space-evenly;
   margin: 90px 84px 90px 0;
   padding: 40px;

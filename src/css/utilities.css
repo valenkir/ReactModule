@@ -4,6 +4,26 @@
   font-weight: 100 1000;
   font-style: normal;
 }
+.dark-bg-primary {
+  background: #343045;
+}
+
+.dark-bg-primary-gradient {
+  background: linear-gradient(to right, #8176af, #c0b7e8);
+}
+
+.dark-bg-secondary-gradient {
+  background: radial-gradient(rgba(52, 48, 69, 0.95), #211e2e);
+}
+
+.dark-primary-text {
+  color: white;
+}
+
+.dark-secondary-text {
+  color: #000000;
+}
+
 .fs-16 {
   font-size: clamp(0rem, 0.75rem + 3.5vw, 1rem);
 }
@@ -98,6 +118,17 @@
   color: white;
 }
 
+.form-field {
+  max-width: 524px;
+  width: 100%;
+  height: 72px;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 40px;
+  padding-left: 42px;
+}
+
 body {
   background-color: #343045;
   font-family: "Montserrat", sans-serif;
@@ -114,5 +145,5 @@ a {
   position: relative;
 }
 a:hover {
-  filter: drop-shadow(0 0 50px #c0b7e8);
+  filter: drop-shadow(0 0 10px #c0b7e8);
 }/*# sourceMappingURL=utilities.css.map */

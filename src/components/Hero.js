@@ -1,7 +1,7 @@
-import arrowIcon from "./assets/images/arrow.svg";
-import heroImg from "./assets/images/hero.png";
+import arrowIcon from "../assets/images/arrow.svg";
+import heroImg from "../assets/images/hero.png";
 import Button from "./Button";
-import "./css/Main.scss";
+import "../css/Main.scss";
 
 function Hero() {
   return (
