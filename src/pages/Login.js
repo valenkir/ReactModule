@@ -18,14 +18,26 @@ function Login({ setToken }) {
   const [password, setPassword] = useState();
 
   const login = (username, password) => {
-    const userData = {
-      username: "admin",
-      password: "12345",
-    };
-    if (userData.username === username && userData.password === password) {
-      sessionStorage.setItem("username", username);
-      return createRandomString(50);
-    }
+    let token;
+    const userData = [
+      {
+        username: "admin",
+        password: "12345",
+      },
+      {
+        username: "Valentyna",
+        password: "12345",
+      },
+    ];
+    userData.forEach((data) => {
+      if (data.username === username && data.password === password) {
+        sessionStorage.setItem("username", username);
+        token = createRandomString(50);
+        sessionStorage.setItem("authToken", token);
+      }
+    });
+
+    return token;
   };
 
   const handleSubmit = (event) => {
@@ -47,7 +59,7 @@ function Login({ setToken }) {
       <FormField
         classValue={"form-field password-field"}
         placeholder={"Password"}
-        type="text"
+        type="password"
         onInputHandler={(event) => setPassword(event.target.value)}
       />
       <Button classValue={"primary-btn"} btnText={"Log In"} type={"submit"} />

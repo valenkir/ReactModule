@@ -12,15 +12,14 @@ import "./css/App.scss";
 import { useState } from "react";
 
 function App() {
-  const [token, SetToken] = useState(null);
+  const [token, setToken] = useState(null);
   const [welcomeModalWindow, setWelcomeModalWindow] = useState("show");
   const handleOkBtn = () => {
     setWelcomeModalWindow("hide");
   };
 
-  if (!token) {
-    //setWelcomeModalWindow(null);
-    return <Login setToken={SetToken} />;
+  if (!sessionStorage.getItem("authToken")) {
+    return <Login setToken={setToken} />;
   } else {
     if (welcomeModalWindow !== "hide") {
       return (
@@ -52,7 +51,10 @@ function App() {
           src={bgLine4}
           alt="Background image: decorative line"
         />
-        <Header />
+        <Header
+          setToken={setToken}
+          setWelcomeModalWindow={setWelcomeModalWindow}
+        />
         <Main />
       </div>
     );

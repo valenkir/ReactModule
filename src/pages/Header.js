@@ -8,7 +8,13 @@ const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
 };
 
-function Header() {
+function Header({ setToken, setWelcomeModalWindow }) {
+  const logoutHandler = () => {
+    setToken(null);
+    setWelcomeModalWindow("show");
+    sessionStorage.clear();
+  };
+
   return (
     <header>
       <ul className="d-flex Header-container align-items-center">
@@ -45,12 +51,12 @@ function Header() {
               />
             </li>
           </ul>
-          <li>
-            <button className="Header-logout-btn icon-btn">
-              {" "}
-              <img src={logoutIcon} alt="Logout icon" />
-            </button>
-          </li>
+        </li>
+        <li className="Header-logout-btn">
+          <button className="icon-btn" onClick={logoutHandler}>
+            {" "}
+            <img src={logoutIcon} alt="Logout icon" />
+          </button>
         </li>
       </ul>
     </header>
