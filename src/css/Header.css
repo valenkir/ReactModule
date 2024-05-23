@@ -1,3 +1,18 @@
 .Header-container {
   gap: 250px;
+}
+
+.Header-logout-btn {
+  position: absolute;
+  top: -20px;
+  right: 2%;
+}
+
+.Header-theme-btns {
+  position: absolute;
+  top: -15px;
+  right: 10%;
+}
+.Header-theme-btns ul {
+  gap: 15px;
 }/*# sourceMappingURL=Header.css.map */

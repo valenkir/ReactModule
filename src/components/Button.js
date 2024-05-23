@@ -1,4 +1,4 @@
-function Button({ classValue, btnText, handleMouseClick }) {
+function Button({ classValue, btnText, handleMouseClick, theme = "dark" }) {
   const classes = `fw-bold ${classValue}`;
   return handleMouseClick ? (
     <button className={classes} onClick={handleMouseClick}>

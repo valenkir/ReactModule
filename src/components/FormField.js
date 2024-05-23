@@ -1,4 +1,10 @@
-function FormField({ classValue, placeholder, type, onInputHandler }) {
+function FormField({
+  classValue,
+  placeholder,
+  type,
+  theme = "dark",
+  onInputHandler,
+}) {
   return (
     <input
       className={classValue}

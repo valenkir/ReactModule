@@ -18,22 +18,35 @@ $fontSizes: (
   46: 2.875rem,
 );
 
-$dark-theme-bg-colors: (
-  dark-bg-primary: #343045,
-  dark-bg-primary-gradient: linear-gradient(to right, #8176af, #c0b7e8),
-  dark-bg-secondary-gradient:
-    radial-gradient(color.adjust(#343045, $alpha: -0.05), #211e2e),
+$theme-bg-colors: (
+  "dark": (
+    dark-bg-primary: #343045,
+    dark-bg-primary-gradient: linear-gradient(to right, #8176af, #c0b7e8),
+    dark-bg-secondary-gradient:
+      radial-gradient(color.adjust(#343045, $alpha: -0.05), #211e2e),
+  ),
+  "neutral": (
+    neutral-bg-primary: #8176af,
+    neutral-bg-primary-gradient: linear-gradient(to right, #8276b6, #bfb4ee),
+    neutral-bg-secondary-gradient:
+      radial-gradient(color.adjust(#343045, $alpha: -0.05), #211e2e),
+  ),
 );
 
-$dark-theme-text-colors: (
-  dark-primary-text: #ffff,
-  dark-secondary-text: #000000,
+$theme-text-colors: (
+  "dark": (
+    dark-primary-text: #ffff,
+    dark-secondary-text: #000000,
+  ),
+  "neutral": (
+    neutral-primary-text: #ffff,
+    neutral-secondary-text: #000000,
+  ),
 );
 
-@mixin btn($width, $bg-color: $primary-gradient) {
+@mixin btn($width, $height: 48px) {
   width: $width;
-  height: 48px;
-  background: $bg-color;
+  height: $height;
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
@@ -43,15 +56,19 @@ $dark-theme-text-colors: (
   }
 }
 
-@each $name, $color in $dark-theme-bg-colors {
-  .#{$name} {
-    background: $color;
+@each $theme, $colors in $theme-bg-colors {
+  @each $color, $values in $colors {
+    .#{$color} {
+      background: $values;
+    }
   }
 }
 
-@each $name, $color in $dark-theme-text-colors {
-  .#{$name} {
-    color: $color;
+@each $theme, $colors in $theme-text-colors {
+  @each $color, $values in $colors {
+    .#{$color} {
+      color: $values;
+    }
   }
 }
 
@@ -62,11 +79,15 @@ $dark-theme-text-colors: (
 }
 
 $fs-default: 0.875rem;
-$bg-primary: #343045;
-$primary-color: #ffff;
-$secondary-color: #000000;
+$primary-border-color: #ffffff;
 $primary-accent-color: #c0b7e8;
-$primary-gradient: linear-gradient(to right, #8176af, $primary-accent-color);
+$neutral-color: #8176af;
+$bg-light: #bbb7d0;
+$primary-gradient: linear-gradient(
+  to right,
+  $neutral-color,
+  $primary-accent-color
+);
 $secondary-gradient: radial-gradient(#343045, #211e2e);
 
 .fw-bold {
@@ -88,37 +109,45 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
 .primary-btn {
   @include btn(154px);
   border: none;
-  color: $secondary-color;
   &:hover,
   &:active {
     background: transparent;
-    color: $primary-color;
   }
 }
 
 .primary-btn-big {
   @include btn(214px);
   border: none;
-  color: $secondary-color;
   &:hover,
   &:active {
     background: transparent;
-    color: $primary-color;
   }
 }
 
 .secondary-btn {
-  @include btn(154px, transparent);
-  border: 2px solid $primary-color;
-  color: $primary-color;
+  @include btn(154px);
+  background-color: transparent;
+  border: 2px solid $primary-border-color;
+}
+
+.theme-btn {
+  &-dark {
+    @include btn(30px, 15px);
+    border: 1px solid $primary-border-color;
+  }
+  &-neutral {
+    @include btn(30px, 15px);
+    border: 1px solid $primary-border-color;
+  }
+  &-light {
+    @include btn(30px, 15px);
+    border: 1px solid $primary-border-color;
+  }
 }
 
 .icon-btn {
   background-color: transparent;
   border: none;
-  filter: drop-shadow(
-    0px 0px 0.5rem color.adjust($secondary-color, $alpha: -0.1)
-  );
   &:hover {
     filter: drop-shadow(0 0 5px #c0b7e8);
   }
@@ -140,22 +169,17 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
   gap: 40px;
 }
 
-.primary-text {
-  color: $primary-color;
-}
-
 .form-field {
   max-width: 524px;
   width: 100%;
   height: 72px;
   background-color: transparent;
   outline: none;
-  border: 2px solid $primary-color;
+  border: 2px solid $primary-border-color;
   border-radius: 40px;
   padding-left: 42px;
-  color: $primary-color;
   &::placeholder {
-    color: $primary-color;
+    color: #ffff;
   }
   &:focus::placeholder {
     color: transparent;
@@ -163,7 +187,6 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
 }
 
 body {
-  background-color: $bg-primary;
   font-family: "Montserrat", sans-serif;
   font-size: $fs-default;
   font-weight: 400;
@@ -173,7 +196,6 @@ body {
 
 a {
   text-decoration: none;
-  color: $primary-color;
   text-transform: uppercase;
   position: relative;
   &:hover {

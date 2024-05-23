@@ -3,16 +3,25 @@ import logoText from "../assets/images/logo-text.svg";
 import Button from "../components/Button";
 import "../css/Header.scss";
 import logoutIcon from "../assets/images/arrow-right-from-bracket-solid.svg";
+import { setPrimText, setPrimGradientBg } from "../helperFunctions";
 
 const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
 };
 
-function Header({ setToken, setWelcomeModalWindow }) {
+function Header({ setToken, setWelcomeModalWindow, setTheme, theme = "dark" }) {
   const logoutHandler = () => {
     setToken(null);
     setWelcomeModalWindow("show");
     sessionStorage.clear();
+  };
+
+  const handleDarkThemeBtn = () => {
+    setTheme("dark");
+  };
+
+  const handleNeutralThemeBtn = () => {
+    setTheme("neutral");
   };
 
   return (
@@ -41,14 +50,37 @@ function Header({ setToken, setWelcomeModalWindow }) {
         <li>
           <ul className="d-flex gap-40">
             <li>
-              <Button classValue={"secondary-btn"} btnText={"Contact us"} />
+              <Button
+                classValue={`secondary-btn` + " " + setPrimText(theme)}
+                btnText={"Contact us"}
+              />
             </li>
             <li>
               <Button
-                classValue={"primary-btn"}
+                classValue={"primary-btn" + " " + setPrimText(theme)}
                 btnText={"Join Hydra"}
                 handleMouseClick={joinHydraClickHandler}
               />
+            </li>
+          </ul>
+        </li>
+        <li className="Header-theme-btns">
+          <ul className="d-flex">
+            <li>
+              <Button
+                classValue={"theme-btn-dark"}
+                handleMouseClick={handleDarkThemeBtn}
+              />
+            </li>
+            <li>
+              <Button
+                classValue={"theme-btn-neutral"}
+                handleMouseClick={handleNeutralThemeBtn}
+              />
+            </li>
+            <li>
+              {" "}
+              <Button classValue={"theme-btn-light"} />
             </li>
           </ul>
         </li>

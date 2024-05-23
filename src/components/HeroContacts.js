@@ -3,7 +3,7 @@ import phoneIcon from "../assets/images/phone-icon.svg";
 import mailIcon from "../assets/images/mail-icon.svg";
 import "../css/HeroContacts.scss";
 
-function HeroContacts() {
+function HeroContacts(theme = "dark") {
   return (
     <section className="HeroContacts-container d-flex align-items-center">
       <div className="primary-text HeroContacts-contact-block d-flex align-items-center">

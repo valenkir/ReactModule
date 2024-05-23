@@ -13,6 +13,7 @@ import { useState } from "react";
 
 function App() {
   const [token, setToken] = useState(null);
+  const [theme, setTheme] = useState("dark");
   const [welcomeModalWindow, setWelcomeModalWindow] = useState("show");
   const handleOkBtn = () => {
     setWelcomeModalWindow("hide");
@@ -54,8 +55,10 @@ function App() {
         <Header
           setToken={setToken}
           setWelcomeModalWindow={setWelcomeModalWindow}
+          setTheme={setTheme}
+          theme={theme}
         />
-        <Main />
+        <Main theme={theme} />
       </div>
     );
   }

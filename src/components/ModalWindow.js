@@ -1,7 +1,7 @@
 import Button from "./Button";
 import "../css/ModalWindow.scss";
 
-function ModalWindow({ classValue, okBtnHandler }) {
+function ModalWindow({ classValue, okBtnHandler, theme = "dark" }) {
   return (
     <div className={classValue}>
       <h2 className="fs-24">Welcome, {sessionStorage.getItem("username")}</h2>

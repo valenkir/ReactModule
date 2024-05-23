@@ -3,7 +3,7 @@ import heroImg from "../assets/images/hero.png";
 import Button from "./Button";
 import "../css/Main.scss";
 
-function Hero() {
+function Hero(theme = "dark") {
   return (
     <section className="Main-hero">
       <section className="Main-hero-description d-flex">
