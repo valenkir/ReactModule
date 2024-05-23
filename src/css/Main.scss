@@ -3,6 +3,7 @@
 
 .Main-container {
   margin-top: 120px;
+  position: relative;
 }
 
 .Main-hero {
@@ -14,15 +15,6 @@
   &-description {
     flex-direction: column;
     width: 80%;
-  }
-  &-icon-btn {
-    background-color: transparent;
-    border: none;
-  }
-  &-img {
-    filter: drop-shadow(
-      0px 0px 0.5rem color.adjust(utilities.$secondary-color, $alpha: -0.1)
-    );
   }
 }
 
@@ -40,8 +32,4 @@
   margin-top: 36px;
   margin-bottom: 66px;
   line-height: 1.9;
-}
-
-.Main-hero-icon-btn:hover {
-  filter: drop-shadow(0 0 5px #c0b7e8);
 }

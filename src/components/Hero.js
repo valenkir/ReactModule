@@ -18,7 +18,7 @@ function Hero() {
         </p>
         <div className="d-flex gap-40">
           <Button classValue={"primary-btn-big"} btnText={"Build your world"} />
-          <button className="Main-hero-icon-btn">
+          <button className="icon-btn">
             <img src={arrowIcon} alt="Arrow icon" />
           </button>
         </div>

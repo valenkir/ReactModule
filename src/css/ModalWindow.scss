@@ -1,0 +1,18 @@
+@use "./utilities.scss";
+
+.ModalWindow-container {
+  position: absolute;
+  top: 20%;
+  transform: translate(-50%, 0);
+  left: 50%;
+  width: 40vw;
+  height: 50vh;
+  border-radius: 90px;
+  background: utilities.$secondary-gradient;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 100px;
+  color: utilities.$primary-color;
+}

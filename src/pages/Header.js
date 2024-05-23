@@ -2,6 +2,7 @@ import logo from "../assets/images/logo.svg";
 import logoText from "../assets/images/logo-text.svg";
 import Button from "../components/Button";
 import "../css/Header.scss";
+import logoutIcon from "../assets/images/arrow-right-from-bracket-solid.svg";
 
 const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
@@ -44,6 +45,12 @@ function Header() {
               />
             </li>
           </ul>
+          <li>
+            <button className="Header-logout-btn icon-btn">
+              {" "}
+              <img src={logoutIcon} alt="Logout icon" />
+            </button>
+          </li>
         </li>
       </ul>
     </header>

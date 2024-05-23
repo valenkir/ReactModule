@@ -65,11 +65,9 @@ $fs-default: 0.875rem;
 $bg-primary: #343045;
 $primary-color: #ffff;
 $secondary-color: #000000;
-$primary-gradient: linear-gradient(to right, #8176af, #c0b7e8);
-$secondary-gradient: radial-gradient(
-  color.adjust(#343045, $alpha: -0.05),
-  #211e2e
-);
+$primary-accent-color: #c0b7e8;
+$primary-gradient: linear-gradient(to right, #8176af, $primary-accent-color);
+$secondary-gradient: radial-gradient(#343045, #211e2e);
 
 .fw-bold {
   font-weight: 700;
@@ -115,12 +113,27 @@ $secondary-gradient: radial-gradient(
   color: $primary-color;
 }
 
+.icon-btn {
+  background-color: transparent;
+  border: none;
+  filter: drop-shadow(
+    0px 0px 0.5rem color.adjust($secondary-color, $alpha: -0.1)
+  );
+  &:hover {
+    filter: drop-shadow(0 0 5px #c0b7e8);
+  }
+}
+
 .d-flex {
   display: flex;
 }
 
 .align-items-center {
   align-items: center;
+}
+
+.d-none {
+  display: none;
 }
 
 .gap-40 {
