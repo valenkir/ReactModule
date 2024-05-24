@@ -21,11 +21,23 @@
 }
 
 .neutral-bg-primary-gradient {
-  background: linear-gradient(to right, #8276b6, #bfb4ee);
+  background: linear-gradient(to right, #c5bbf2, #dddbe2);
 }
 
 .neutral-bg-secondary-gradient {
-  background: radial-gradient(rgba(52, 48, 69, 0.95), #211e2e);
+  background: radial-gradient(rgba(171, 164, 198, 0.95), #594b95);
+}
+
+.light-bg-primary {
+  background: #d5d0e7;
+}
+
+.light-bg-primary-gradient {
+  background: linear-gradient(to right, #ffffff, #856fe2);
+}
+
+.light-bg-secondary-gradient {
+  background: radial-gradient(rgba(255, 255, 255, 0.95), #9582e6);
 }
 
 .dark-primary-text {
@@ -41,6 +53,14 @@
 }
 
 .neutral-secondary-text {
+  color: #000000;
+}
+
+.light-primary-text {
+  color: #4b34b0;
+}
+
+.light-secondary-text {
   color: #000000;
 }
 
@@ -83,7 +103,12 @@
 .primary-btn:hover, .primary-btn:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn:hover, .primary-btn:active {
+.primary-btn-animation-dark:hover, .primary-btn-animation-neutral:hover, .primary-btn-animation-dark:active, .primary-btn-animation-neutral:active {
+  color: #ffffff;
+  background: transparent;
+}
+.primary-btn-animation-light:hover, .primary-btn-animation-light:active {
+  color: #000000;
   background: transparent;
 }
 
@@ -98,7 +123,12 @@
 .primary-btn-big:hover, .primary-btn-big:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn-big:hover, .primary-btn-big:active {
+.primary-btn-big-animation-dark:hover, .primary-btn-big-animation-neutral:hover, .primary-btn-big-animation-dark:active, .primary-btn-big-animation-neutral:active {
+  color: #ffffff;
+  background: transparent;
+}
+.primary-btn-big-animation-light:hover, .primary-btn-big-animation-light:active {
+  color: #000000;
   background: transparent;
 }
 
@@ -147,6 +177,24 @@
 }
 .theme-btn-light:hover, .theme-btn-light:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
+}
+
+.dark-accent-text {
+  background: -webkit-linear-gradient(#8176af, #c0b7e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neutral-accent-text {
+  background: -webkit-linear-gradient(#c5bbf2, #dddbe2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-accent-text {
+  background: -webkit-linear-gradient(#4b34b0, #8f63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-btn {
@@ -201,7 +249,7 @@ body {
   font-size: 0.875rem;
   font-weight: 400;
   box-sizing: border-box;
-  position: relative;
+  background-color: #343045;
 }
 
 a {

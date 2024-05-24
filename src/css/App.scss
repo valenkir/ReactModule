@@ -1,6 +1,11 @@
+@use "./utilities.scss";
+
 .App-main-container {
-  margin-top: 50px;
-  padding-left: 84px;
+  padding: 50px 0 20px 84px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-size: utilities.$fs-default;
+  font-weight: 400;
 }
 
 .App-bg-line {

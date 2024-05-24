@@ -4,28 +4,64 @@
   font-weight: 100 1000;
   font-style: normal;
 }
-.dark-dark-bg-primary {
-  background: dark-bg-primary;
+.dark-bg-primary {
+  background: #343045;
 }
 
-.dark-dark-bg-primary-gradient {
-  background: dark-bg-primary-gradient;
+.dark-bg-primary-gradient {
+  background: linear-gradient(to right, #8176af, #c0b7e8);
 }
 
-.dark-dark-bg-secondary-gradient {
-  background: dark-bg-secondary-gradient;
+.dark-bg-secondary-gradient {
+  background: radial-gradient(rgba(52, 48, 69, 0.95), #211e2e);
 }
 
-.neutral-neutral-bg-primary {
-  background: neutral-bg-primary;
+.neutral-bg-primary {
+  background: #8176af;
 }
 
-.neutral-neutral-bg-primary-gradient {
-  background: neutral-bg-primary-gradient;
+.neutral-bg-primary-gradient {
+  background: linear-gradient(to right, #c5bbf2, #dddbe2);
 }
 
-.neutral-neutral-bg-secondary-gradient {
-  background: neutral-bg-secondary-gradient;
+.neutral-bg-secondary-gradient {
+  background: radial-gradient(rgba(171, 164, 198, 0.95), #594b95);
+}
+
+.light-bg-primary {
+  background: #d5d0e7;
+}
+
+.light-bg-primary-gradient {
+  background: linear-gradient(to right, #ffffff, #856fe2);
+}
+
+.light-bg-secondary-gradient {
+  background: radial-gradient(rgba(255, 255, 255, 0.95), #9582e6);
+}
+
+.dark-primary-text {
+  color: white;
+}
+
+.dark-secondary-text {
+  color: #000000;
+}
+
+.neutral-primary-text {
+  color: white;
+}
+
+.neutral-secondary-text {
+  color: #000000;
+}
+
+.light-primary-text {
+  color: #4b34b0;
+}
+
+.light-secondary-text {
+  color: #000000;
 }
 
 .fs-16 {
@@ -56,51 +92,50 @@
   margin-right: 15px;
 }
 
-.primary-btn {
+.primary-btn-dark, .primary-btn-neutral {
   width: 154px;
   height: 48px;
-  background: linear-gradient(to right, #8176af, #c0b7e8);
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
   border: none;
-  color: #000000;
 }
-.primary-btn:hover, .primary-btn:active {
+.primary-btn-dark:hover, .primary-btn-dark:active, .primary-btn-neutral:hover, .primary-btn-neutral:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn:hover, .primary-btn:active {
+.primary-btn-dark:hover, .primary-btn-dark:active, .primary-btn-neutral:hover, .primary-btn-neutral:active {
+  color: #ffffff;
   background: transparent;
-  color: white;
+}
+.primary-btn-light:hover, .primary-btn-light:active {
+  color: #000000;
+  background: transparent;
 }
 
 .primary-btn-big {
   width: 214px;
   height: 48px;
-  background: linear-gradient(to right, #8176af, #c0b7e8);
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
   border: none;
-  color: #000000;
 }
 .primary-btn-big:hover, .primary-btn-big:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 .primary-btn-big:hover, .primary-btn-big:active {
+  color: #ffffff;
   background: transparent;
-  color: white;
 }
 
 .secondary-btn {
   width: 154px;
   height: 48px;
-  background: transparent;
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
-  border: 2px solid white;
-  color: white;
+  background-color: transparent;
+  border: 2px solid #ffffff;
 }
 .secondary-btn:hover, .secondary-btn:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
@@ -109,11 +144,10 @@
 .theme-btn-dark {
   width: 30px;
   height: 15px;
-  background: #343045;
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .theme-btn-dark:hover, .theme-btn-dark:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
@@ -121,11 +155,10 @@
 .theme-btn-neutral {
   width: 30px;
   height: 15px;
-  background: #8176af;
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .theme-btn-neutral:hover, .theme-btn-neutral:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
@@ -133,20 +166,36 @@
 .theme-btn-light {
   width: 30px;
   height: 15px;
-  background: #bbb7d0;
   border-radius: 40px;
   text-transform: uppercase;
   transition: all 150ms ease-in-out;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 .theme-btn-light:hover, .theme-btn-light:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 
+.dark-accent-text {
+  background: -webkit-linear-gradient(#8176af, #c0b7e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neutral-accent-text {
+  background: -webkit-linear-gradient(#c5bbf2, #dddbe2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-accent-text {
+  background: -webkit-linear-gradient(#4b34b0, #8f63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .icon-btn {
   background-color: transparent;
   border: none;
-  filter: drop-shadow(0px 0px 0.5rem rgba(0, 0, 0, 0.9));
 }
 .icon-btn:hover {
   filter: drop-shadow(0 0 5px #c0b7e8);
@@ -168,20 +217,15 @@
   gap: 40px;
 }
 
-.primary-text {
-  color: white;
-}
-
 .form-field {
   max-width: 524px;
   width: 100%;
   height: 72px;
   background-color: transparent;
   outline: none;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 40px;
   padding-left: 42px;
-  color: white;
 }
 .form-field::-moz-placeholder {
   color: white;
@@ -197,17 +241,15 @@
 }
 
 body {
-  background-color: #343045;
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   box-sizing: border-box;
-  position: relative;
+  background-color: #343045;
 }
 
 a {
   text-decoration: none;
-  color: white;
   text-transform: uppercase;
   position: relative;
 }
@@ -217,7 +259,6 @@ a:hover {
 
 .HeroContacts-container {
   border-radius: 90px;
-  background: radial-gradient(#343045, #211e2e);
   justify-content: space-evenly;
   margin: 90px 84px 90px 0;
   padding: 40px;

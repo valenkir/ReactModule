@@ -27,9 +27,15 @@ $theme-bg-colors: (
   ),
   "neutral": (
     neutral-bg-primary: #8176af,
-    neutral-bg-primary-gradient: linear-gradient(to right, #8276b6, #bfb4ee),
+    neutral-bg-primary-gradient: linear-gradient(to right, #c5bbf2, #dddbe2),
     neutral-bg-secondary-gradient:
-      radial-gradient(color.adjust(#343045, $alpha: -0.05), #211e2e),
+      radial-gradient(color.adjust(#aba4c6, $alpha: -0.05), #594b95),
+  ),
+  "light": (
+    light-bg-primary: #d5d0e7,
+    light-bg-primary-gradient: linear-gradient(to right, #ffffff, #856fe2),
+    light-bg-secondary-gradient:
+      radial-gradient(color.adjust(#ffffff, $alpha: -0.05), #9582e6),
   ),
 );
 
@@ -41,6 +47,10 @@ $theme-text-colors: (
   "neutral": (
     neutral-primary-text: #ffff,
     neutral-secondary-text: #000000,
+  ),
+  "light": (
+    light-primary-text: #4b34b0,
+    light-secondary-text: #000000,
   ),
 );
 
@@ -83,12 +93,6 @@ $primary-border-color: #ffffff;
 $primary-accent-color: #c0b7e8;
 $neutral-color: #8176af;
 $bg-light: #bbb7d0;
-$primary-gradient: linear-gradient(
-  to right,
-  $neutral-color,
-  $primary-accent-color
-);
-$secondary-gradient: radial-gradient(#343045, #211e2e);
 
 .fw-bold {
   font-weight: 700;
@@ -109,8 +113,16 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
 .primary-btn {
   @include btn(154px);
   border: none;
-  &:hover,
-  &:active {
+  &-animation-dark:hover,
+  &-animation-neutral:hover,
+  &-animation-dark:active,
+  &-animation-neutral:active {
+    color: #ffffff;
+    background: transparent;
+  }
+  &-animation-light:hover,
+  &-animation-light:active {
+    color: #000000;
     background: transparent;
   }
 }
@@ -118,8 +130,16 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
 .primary-btn-big {
   @include btn(214px);
   border: none;
-  &:hover,
-  &:active {
+  &-animation-dark:hover,
+  &-animation-neutral:hover,
+  &-animation-dark:active,
+  &-animation-neutral:active {
+    color: #ffffff;
+    background: transparent;
+  }
+  &-animation-light:hover,
+  &-animation-light:active {
+    color: #000000;
     background: transparent;
   }
 }
@@ -143,6 +163,24 @@ $secondary-gradient: radial-gradient(#343045, #211e2e);
     @include btn(30px, 15px);
     border: 1px solid $primary-border-color;
   }
+}
+
+.dark-accent-text {
+  background: -webkit-linear-gradient(#8176af, #c0b7e8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neutral-accent-text {
+  background: -webkit-linear-gradient(#c5bbf2, #dddbe2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.light-accent-text {
+  background: -webkit-linear-gradient(#4b34b0, #8f63ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-btn {
@@ -191,7 +229,7 @@ body {
   font-size: $fs-default;
   font-weight: 400;
   box-sizing: border-box;
-  position: relative;
+  background-color: #343045;
 }
 
 a {

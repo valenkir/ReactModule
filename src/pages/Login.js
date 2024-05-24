@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
 import "../css/Login.scss";
 import { useState } from "react";
+import { ThemeContext } from "../context/ThemeContext.js";
 
 function createRandomString(length) {
   const chars =
@@ -14,6 +16,7 @@ function createRandomString(length) {
 }
 
 function Login({ setToken }) {
+  const theme = useContext(ThemeContext);
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 
@@ -47,22 +50,26 @@ function Login({ setToken }) {
 
   return (
     <form
-      className="d-flex align-items-center LoginForm-form"
+      className={`d-flex align-items-center LoginForm-form ${theme}-bg-secondary-gradient`}
       onSubmit={handleSubmit}
     >
       <FormField
-        classValue={"form-field username-field"}
+        classValue={`form-field username-field ${theme}-primary-text`}
         placeholder={"Username"}
         type="text"
         onInputHandler={(event) => setUserName(event.target.value)}
       />
       <FormField
-        classValue={"form-field password-field"}
+        classValue={`form-field password-field ${theme}-primary-text`}
         placeholder={"Password"}
         type="password"
         onInputHandler={(event) => setPassword(event.target.value)}
       />
-      <Button classValue={"primary-btn"} btnText={"Log In"} type={"submit"} />
+      <Button
+        classValue={`primary-btn primary-btn-animation-${theme} ${theme}-bg-primary-gradient`}
+        btnText={"Log In"}
+        type={"submit"}
+      />
     </form>
   );
 }

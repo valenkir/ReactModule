@@ -12,6 +12,15 @@
   column-gap: 280px;
   align-items: center;
   justify-content: center;
+  &-img-dark {
+    filter: drop-shadow(0px 0px 5px #000000);
+  }
+  &-img-neutral {
+    filter: drop-shadow(0px 0px 5px #594b95);
+  }
+  &-img-light {
+    filter: drop-shadow(0px 0px 5px #856fe2);
+  }
   &-description {
     flex-direction: column;
     width: 80%;
@@ -21,11 +30,6 @@
 .Main-header {
   text-transform: capitalize;
   line-height: 1.6;
-  &-accent {
-    background: utilities.$primary-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }
 
 .Main-description {

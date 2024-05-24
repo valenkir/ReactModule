@@ -4,13 +4,13 @@
 
 .Header-logout-btn {
   position: absolute;
-  top: -20px;
+  top: 24px;
   right: 2%;
 }
 
 .Header-theme-btns {
   position: absolute;
-  top: -15px;
+  top: 32px;
   right: 10%;
 }
 .Header-theme-btns ul {
