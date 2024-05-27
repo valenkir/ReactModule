@@ -3,10 +3,10 @@ import locationIcon from "../assets/images/location-icon.svg";
 import phoneIcon from "../assets/images/phone-icon.svg";
 import mailIcon from "../assets/images/mail-icon.svg";
 import "../css/HeroContacts.scss";
-import { ThemeContext } from "../context/ThemeContext.js";
+import { ThemeContext } from "../context/Theme.js";
 
 function HeroContacts() {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <section

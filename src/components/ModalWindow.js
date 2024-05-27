@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Button from "./Button";
 import "../css/ModalWindow.scss";
-import { ThemeContext } from "../context/ThemeContext.js";
+import { ThemeContext } from "../context/Theme.js";
 
 function ModalWindow({ classValue, okBtnHandler }) {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <div className={classValue}>
       <h2 className={`${theme}-primary-text fs-24`}>

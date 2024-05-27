@@ -1,17 +1,22 @@
+.Header-header {
+  position: relative;
+  z-index: 2;
+}
+
 .Header-container {
   gap: 250px;
 }
 
 .Header-logout-btn {
   position: absolute;
-  top: 24px;
-  right: 2%;
+  top: -22px;
+  right: 3%;
 }
 
 .Header-theme-btns {
   position: absolute;
-  top: 32px;
-  right: 10%;
+  top: -16px;
+  right: 9%;
   ul {
     gap: 15px;
   }
