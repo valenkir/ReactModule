@@ -44,14 +44,14 @@ function Signup({ setToken, setPage }) {
       />
       <FormField
         classValue={`form-field password-field ${theme}-primary-text`}
-        placeholder={"Email"}
-        type="email"
+        placeholder={"Confirm password"}
+        type="password"
         onInputHandler={(event) => setPassword(event.target.value)}
       />
       <FormField
         classValue={`form-field password-field ${theme}-primary-text`}
-        placeholder={"Phone number"}
-        type="tel"
+        placeholder={"Email"}
+        type="email"
         onInputHandler={(event) => setPassword(event.target.value)}
       />
       <Button
