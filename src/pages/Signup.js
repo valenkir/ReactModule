@@ -7,7 +7,6 @@ import "../css/Signup.scss";
 function Signup({ setToken, setPage }) {
   const { theme } = useContext(ThemeContext);
   const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
 
   const signup = () => {
     sessionStorage.setItem("authToken", "13429test");
@@ -40,19 +39,16 @@ function Signup({ setToken, setPage }) {
         classValue={`form-field password-field ${theme}-primary-text`}
         placeholder={"Password"}
         type="password"
-        onInputHandler={(event) => setPassword(event.target.value)}
       />
       <FormField
         classValue={`form-field password-field ${theme}-primary-text`}
         placeholder={"Confirm password"}
         type="password"
-        onInputHandler={(event) => setPassword(event.target.value)}
       />
       <FormField
         classValue={`form-field password-field ${theme}-primary-text`}
         placeholder={"Email"}
         type="email"
-        onInputHandler={(event) => setPassword(event.target.value)}
       />
       <Button
         classValue={`primary-btn primary-btn-animation-${theme} ${theme}-bg-primary-gradient`}
