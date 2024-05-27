@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Landing from "./pages/Landing.js";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup.js";
 import { ThemeProvider } from "./context/Theme.js";
 import "./css/reset.css";
 import "./css/utilities.scss";
@@ -22,6 +23,7 @@ function App() {
         </div>
       )}
       {page === "login" && <Login setToken={setToken} setPage={setPage} />}
+      {page === "signup" && <Signup setToken={setToken} setPage={setPage} />}
     </ThemeProvider>
   );
 }

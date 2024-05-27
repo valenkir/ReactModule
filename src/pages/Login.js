@@ -77,7 +77,7 @@ function Login({ setToken, setPage }) {
       />
       <a
         href="#"
-        className={`${theme}-primary-text Login-form-signup-link`}
+        className={`${theme}-primary-text Login-form-link`}
         onClick={navigateToSignup}
       >
         Don't have an account yet? Sign up!

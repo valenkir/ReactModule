@@ -1,21 +1,15 @@
-@use "./utilities.scss";
-
-body {
-  height: 75vh;
-}
-
-.Login-form {
+.Signup-form {
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
-  padding: 20px;
+  padding: 60px 20px;
   max-width: 60%;
   height: 50vh;
   justify-content: center;
   flex-direction: column;
   gap: 20px;
   border-radius: 100px;
-  &-link {
-    text-transform: none;
-  }
 }
+.Signup-form-link {
+  text-transform: none;
+}/*# sourceMappingURL=Signup.css.map */
