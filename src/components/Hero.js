@@ -6,10 +6,10 @@ import heroImg from "../assets/images/hero.png";
 import Button from "./Button";
 import "../css/utilities.scss";
 import "../css/Main.scss";
-import { ThemeContext } from "../context/ThemeContext.js";
+import { ThemeContext } from "../context/Theme.js";
 
 function Hero() {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const getArrowIcon = () => {
     switch (theme) {
@@ -19,6 +19,8 @@ function Hero() {
         return neutralArrowIcon;
       case "light":
         return lightArrowIcon;
+      default:
+        break;
     }
   };
 

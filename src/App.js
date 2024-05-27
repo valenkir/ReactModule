@@ -1,22 +1,22 @@
 import { useState } from "react";
-import bgLine1 from "./assets/images/bg-line-1.svg";
-import bgLine2 from "./assets/images/bg-line-2.svg";
-import bgLine3 from "./assets/images/bg-line-3.svg";
-import bgLine4 from "./assets/images/bg-line-4.svg";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import Login from "./pages/Login";
 import ModalWindow from "./components/ModalWindow";
+import { ThemeProvider } from "./context/Theme.js";
 import "./css/reset.css";
 import "./css/utilities.scss";
 import "./css/App.scss";
-import { ThemeContext } from "./context/ThemeContext.js";
+import bgLine1 from "./assets/images/bg-line-1.svg";
+import bgLine2 from "./assets/images/bg-line-2.svg";
+import bgLine3 from "./assets/images/bg-line-3.svg";
+import bgLine4 from "./assets/images/bg-line-4.svg";
 
 function App() {
   const [token, setToken] = useState(null);
+  const [welcomeModalWindow, setWelcomeModalWindow] = useState("show");
   const savedTheme = sessionStorage.getItem("theme");
   const [theme, setTheme] = useState(savedTheme ? savedTheme : "dark");
-  const [welcomeModalWindow, setWelcomeModalWindow] = useState("show");
 
   const handleOkBtn = () => {
     setWelcomeModalWindow("hide");
@@ -24,23 +24,23 @@ function App() {
 
   if (!sessionStorage.getItem("authToken")) {
     return (
-      <ThemeContext.Provider value={theme}>
+      <ThemeProvider theme={theme} setTheme={setTheme}>
         <Login setToken={setToken} />
-      </ThemeContext.Provider>
+      </ThemeProvider>
     );
   } else {
     if (welcomeModalWindow !== "hide") {
       return (
-        <ThemeContext.Provider value={theme}>
+        <ThemeProvider theme={theme} setTheme={setTheme}>
           <ModalWindow
             classValue={`${theme}-bg-secondary-gradient ModalWindow-container d-flex`}
             okBtnHandler={handleOkBtn}
           />
-        </ThemeContext.Provider>
+        </ThemeProvider>
       );
     }
     return (
-      <ThemeContext.Provider value={theme}>
+      <ThemeProvider theme={theme} setTheme={setTheme}>
         <div className={`App-main-container ${theme}-bg-primary`}>
           <img
             className="App-bg-line App-bg-line-1"
@@ -65,11 +65,10 @@ function App() {
           <Header
             setToken={setToken}
             setWelcomeModalWindow={setWelcomeModalWindow}
-            setTheme={setTheme}
           />
           <Main />
         </div>
-      </ThemeContext.Provider>
+      </ThemeProvider>
     );
   }
 }

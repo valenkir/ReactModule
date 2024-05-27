@@ -1,4 +1,7 @@
 import { useContext } from "react";
+import Button from "../components/Button";
+import { ThemeContext } from "../context/Theme.js";
+import "../css/Header.scss";
 import darkLogo from "../assets/images/dark-logo.svg";
 import neutralLogo from "../assets/images/neutral-logo.svg";
 import lightLogo from "../assets/images/light-logo.svg";
@@ -8,16 +11,13 @@ import lightLogoText from "../assets/images/light-logo-text.svg";
 import darkLogoutIcon from "../assets/images/dark-logout-icon.svg";
 import neutralLogoutIcon from "../assets/images/neutral-logout-icon.svg";
 import lightLogoutIcon from "../assets/images/light-logout-icon.svg";
-import Button from "../components/Button";
-import "../css/Header.scss";
-import { ThemeContext } from "../context/ThemeContext.js";
 
 const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
 };
 
-function Header({ setToken, setWelcomeModalWindow, setTheme }) {
-  const theme = useContext(ThemeContext);
+function Header({ setToken, setWelcomeModalWindow }) {
+  const { theme, changeTheme } = useContext(ThemeContext);
 
   const logoutHandler = () => {
     setToken(null);
@@ -26,18 +26,15 @@ function Header({ setToken, setWelcomeModalWindow, setTheme }) {
   };
 
   const handleDarkThemeBtn = () => {
-    setTheme("dark");
-    sessionStorage.setItem("theme", "dark");
+    changeTheme("dark");
   };
 
   const handleNeutralThemeBtn = () => {
-    setTheme("neutral");
-    sessionStorage.setItem("theme", "neutral");
+    changeTheme("neutral");
   };
 
   const handleLightThemeBtn = () => {
-    setTheme("light");
-    sessionStorage.setItem("theme", "light");
+    changeTheme("light");
   };
 
   const getLogo = () => {
@@ -48,6 +45,8 @@ function Header({ setToken, setWelcomeModalWindow, setTheme }) {
         return lightLogo;
       case "neutral":
         return neutralLogo;
+      default:
+        break;
     }
   };
 
@@ -59,6 +58,8 @@ function Header({ setToken, setWelcomeModalWindow, setTheme }) {
         return lightLogoText;
       case "neutral":
         return neutralLogoText;
+      default:
+        break;
     }
   };
 
@@ -70,11 +71,13 @@ function Header({ setToken, setWelcomeModalWindow, setTheme }) {
         return lightLogoutIcon;
       case "neutral":
         return neutralLogoutIcon;
+      default:
+        break;
     }
   };
 
   return (
-    <header>
+    <header className="Header-header">
       <ul className="d-flex Header-container align-items-center">
         <li>
           <img src={getLogo()} alt="Hydra logo" className="me-15" />

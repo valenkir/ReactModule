@@ -3,7 +3,7 @@ import FormField from "../components/FormField";
 import Button from "../components/Button";
 import "../css/Login.scss";
 import { useState } from "react";
-import { ThemeContext } from "../context/ThemeContext.js";
+import { ThemeContext } from "../context/Theme.js";
 
 function createRandomString(length) {
   const chars =
@@ -16,7 +16,7 @@ function createRandomString(length) {
 }
 
 function Login({ setToken }) {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
 

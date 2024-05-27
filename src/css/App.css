@@ -92,7 +92,7 @@
   margin-right: 15px;
 }
 
-.primary-btn-dark, .primary-btn-neutral {
+.primary-btn {
   width: 154px;
   height: 48px;
   border-radius: 40px;
@@ -100,14 +100,14 @@
   transition: all 150ms ease-in-out;
   border: none;
 }
-.primary-btn-dark:hover, .primary-btn-dark:active, .primary-btn-neutral:hover, .primary-btn-neutral:active {
+.primary-btn:hover, .primary-btn:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn-dark:hover, .primary-btn-dark:active, .primary-btn-neutral:hover, .primary-btn-neutral:active {
+.primary-btn-animation-dark:hover, .primary-btn-animation-neutral:hover, .primary-btn-animation-dark:active, .primary-btn-animation-neutral:active {
   color: #ffffff;
   background: transparent;
 }
-.primary-btn-light:hover, .primary-btn-light:active {
+.primary-btn-animation-light:hover, .primary-btn-animation-light:active {
   color: #000000;
   background: transparent;
 }
@@ -123,8 +123,12 @@
 .primary-btn-big:hover, .primary-btn-big:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn-big:hover, .primary-btn-big:active {
+.primary-btn-big-animation-dark:hover, .primary-btn-big-animation-neutral:hover, .primary-btn-big-animation-dark:active, .primary-btn-big-animation-neutral:active {
   color: #ffffff;
+  background: transparent;
+}
+.primary-btn-big-animation-light:hover, .primary-btn-big-animation-light:active {
+  color: #000000;
   background: transparent;
 }
 
