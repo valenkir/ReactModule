@@ -7,22 +7,3 @@
   font-size: utilities.$fs-default;
   font-weight: 400;
 }
-
-.App-bg-line {
-  position: absolute;
-  z-index: 0;
-  &-1 {
-    top: 150px;
-    right: 5%;
-  }
-  &-2 {
-    right: 12%;
-  }
-  &-3 {
-    right: 2%;
-    top: 400px;
-  }
-  &-4 {
-    top: 230px;
-  }
-}

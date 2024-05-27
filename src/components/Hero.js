@@ -5,7 +5,7 @@ import lightArrowIcon from "../assets/images/arrow-light.svg";
 import heroImg from "../assets/images/hero.png";
 import Button from "./Button";
 import "../css/utilities.scss";
-import "../css/Main.scss";
+import "../css/Landing.scss";
 import { ThemeContext } from "../context/Theme.js";
 
 function Hero() {
@@ -25,13 +25,13 @@ function Hero() {
   };
 
   return (
-    <section className="Main-hero">
-      <section className="Main-hero-description d-flex">
-        <h1 className={`fs-46 Main-header ${theme}-primary-text fw-bold`}>
+    <section className="Landing-hero">
+      <section className="Landing-hero-description d-flex">
+        <h1 className={`fs-46 Landing-header ${theme}-primary-text fw-bold`}>
           <span className={`${theme}-accent-text`}>Dive</span> into the depths
           of <span className={`${theme}-accent-text`}>virtual reality</span>
         </h1>
-        <p className={`${theme}-primary-text fs-16 Main-description`}>
+        <p className={`${theme}-primary-text fs-16 Landing-description`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore nisl tincidunt eget.
           Lectus mauris eros in vitae .
@@ -50,7 +50,7 @@ function Hero() {
         <img
           src={heroImg}
           alt="A woman in the Hydra virtual reality headset"
-          className={`Main-hero-img-${theme}`}
+          className={`Landing-hero-img-${theme}`}
         />
       </section>
     </section>

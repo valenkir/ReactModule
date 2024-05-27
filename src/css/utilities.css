@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Montserrat";
-  src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
+  src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+    format("truetype-variations");
   font-weight: 100 1000;
   font-style: normal;
 }
@@ -100,14 +101,19 @@
   transition: all 150ms ease-in-out;
   border: none;
 }
-.primary-btn:hover, .primary-btn:active {
+.primary-btn:hover,
+.primary-btn:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn-animation-dark:hover, .primary-btn-animation-neutral:hover, .primary-btn-animation-dark:active, .primary-btn-animation-neutral:active {
+.primary-btn-animation-dark:hover,
+.primary-btn-animation-neutral:hover,
+.primary-btn-animation-dark:active,
+.primary-btn-animation-neutral:active {
   color: #ffffff;
   background: transparent;
 }
-.primary-btn-animation-light:hover, .primary-btn-animation-light:active {
+.primary-btn-animation-light:hover,
+.primary-btn-animation-light:active {
   color: #000000;
   background: transparent;
 }
@@ -120,14 +126,19 @@
   transition: all 150ms ease-in-out;
   border: none;
 }
-.primary-btn-big:hover, .primary-btn-big:active {
+.primary-btn-big:hover,
+.primary-btn-big:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
-.primary-btn-big-animation-dark:hover, .primary-btn-big-animation-neutral:hover, .primary-btn-big-animation-dark:active, .primary-btn-big-animation-neutral:active {
+.primary-btn-big-animation-dark:hover,
+.primary-btn-big-animation-neutral:hover,
+.primary-btn-big-animation-dark:active,
+.primary-btn-big-animation-neutral:active {
   color: #ffffff;
   background: transparent;
 }
-.primary-btn-big-animation-light:hover, .primary-btn-big-animation-light:active {
+.primary-btn-big-animation-light:hover,
+.primary-btn-big-animation-light:active {
   color: #000000;
   background: transparent;
 }
@@ -141,7 +152,8 @@
   background-color: transparent;
   border: 2px solid #ffffff;
 }
-.secondary-btn:hover, .secondary-btn:active {
+.secondary-btn:hover,
+.secondary-btn:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 
@@ -153,7 +165,8 @@
   transition: all 150ms ease-in-out;
   border: 1px solid #ffffff;
 }
-.theme-btn-dark:hover, .theme-btn-dark:active {
+.theme-btn-dark:hover,
+.theme-btn-dark:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 .theme-btn-neutral {
@@ -164,7 +177,8 @@
   transition: all 150ms ease-in-out;
   border: 1px solid #ffffff;
 }
-.theme-btn-neutral:hover, .theme-btn-neutral:active {
+.theme-btn-neutral:hover,
+.theme-btn-neutral:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 .theme-btn-light {
@@ -175,7 +189,8 @@
   transition: all 150ms ease-in-out;
   border: 1px solid #ffffff;
 }
-.theme-btn-light:hover, .theme-btn-light:active {
+.theme-btn-light:hover,
+.theme-btn-light:active {
   box-shadow: 0 0 10px 0 #8176af inset, 0 0 10px 4px #c0b7e8;
 }
 
@@ -257,6 +272,7 @@ a {
   text-transform: uppercase;
   position: relative;
 }
+
 a:hover {
   filter: drop-shadow(0 0 10px #c0b7e8);
-}/*# sourceMappingURL=utilities.css.map */
+} /*# sourceMappingURL=utilities.css.map */

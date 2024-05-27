@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
+import { ThemeContext } from "../context/Theme";
 import "../css/Login.scss";
-import { useState } from "react";
-import { ThemeContext } from "../context/Theme.js";
 
 function createRandomString(length) {
   const chars =
@@ -15,7 +14,7 @@ function createRandomString(length) {
   return result;
 }
 
-function Login({ setToken }) {
+function Login({ setToken, setPage }) {
   const { theme } = useContext(ThemeContext);
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
@@ -37,6 +36,7 @@ function Login({ setToken }) {
         sessionStorage.setItem("username", username);
         token = createRandomString(50);
         sessionStorage.setItem("authToken", token);
+        setPage("landing");
       }
     });
 
@@ -48,9 +48,14 @@ function Login({ setToken }) {
     setToken(login(username, password));
   };
 
+  const navigateToSignup = (event) => {
+    event.preventDefault();
+    setPage("signup");
+  };
+
   return (
     <form
-      className={`d-flex align-items-center LoginForm-form ${theme}-bg-secondary-gradient`}
+      className={`d-flex align-items-center Login-form ${theme}-bg-secondary-gradient`}
       onSubmit={handleSubmit}
     >
       <FormField
@@ -70,6 +75,13 @@ function Login({ setToken }) {
         btnText={"Log In"}
         type={"submit"}
       />
+      <a
+        href="#"
+        className={`${theme}-primary-text Login-form-signup-link`}
+        onClick={navigateToSignup}
+      >
+        Don't have an account yet? Sign up!
+      </a>
     </form>
   );
 }

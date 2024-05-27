@@ -267,23 +267,4 @@ a:hover {
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
-}
-
-.App-bg-line {
-  position: absolute;
-  z-index: -1;
-}
-.App-bg-line-1 {
-  top: 150px;
-  right: 5%;
-}
-.App-bg-line-2 {
-  right: 12%;
-}
-.App-bg-line-3 {
-  right: 2%;
-  top: 400px;
-}
-.App-bg-line-4 {
-  top: 230px;
 }/*# sourceMappingURL=App.css.map */

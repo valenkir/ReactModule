@@ -16,11 +16,12 @@ const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
 };
 
-function Header({ setToken, setWelcomeModalWindow }) {
+function Header({ setToken, setWelcomeModalWindow, setPage }) {
   const { theme, changeTheme } = useContext(ThemeContext);
 
   const logoutHandler = () => {
     setToken(null);
+    setPage("login");
     setWelcomeModalWindow("show");
     sessionStorage.clear();
   };
@@ -86,22 +87,22 @@ function Header({ setToken, setWelcomeModalWindow }) {
         <li>
           <ul className="d-flex gap-40 fw-bold">
             <li>
-              <a href="" className={`${theme}-primary-text`}>
+              <a href="#" className={`${theme}-primary-text`}>
                 About
               </a>
             </li>
             <li>
-              <a href="" className={`${theme}-primary-text`}>
+              <a href="#" className={`${theme}-primary-text`}>
                 Services
               </a>
             </li>
             <li>
-              <a href="" className={`${theme}-primary-text`}>
+              <a href="#" className={`${theme}-primary-text`}>
                 Technologies
               </a>
             </li>
             <li>
-              <a href="" className={`${theme}-primary-text`}>
+              <a href="#" className={`${theme}-primary-text`}>
                 How to
               </a>
             </li>
