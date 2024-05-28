@@ -12,6 +12,14 @@
   @return clamp($fontSize - 1rem, 0.75rem + 3.5vw, $fontSize);
 }
 
+$fs-default: 0.875rem;
+$primary-dark-color: #343045;
+$primary-neutral-color: #8176af;
+$primary-light-color: #ffffff;
+$primary-accent-color: #c0b7e8;
+$primary-light-text-color: #4b34b0;
+$error-color: #ff044b;
+
 $fontSizes: (
   16: 1rem,
   24: 1.5rem,
@@ -20,36 +28,42 @@ $fontSizes: (
 
 $theme-bg-colors: (
   "dark": (
-    dark-bg-primary: #343045,
-    dark-bg-primary-gradient: linear-gradient(to right, #8176af, #c0b7e8),
+    dark-bg-primary: $primary-dark-color,
+    dark-bg-primary-gradient:
+      linear-gradient(to right, $primary-neutral-color, $primary-accent-color),
     dark-bg-secondary-gradient:
       radial-gradient(color.adjust(#343045, $alpha: -0.05), #211e2e),
   ),
   "neutral": (
-    neutral-bg-primary: #8176af,
-    neutral-bg-primary-gradient: linear-gradient(to right, #c5bbf2, #dddbe2),
+    neutral-bg-primary: $primary-neutral-color,
+    neutral-bg-primary-gradient:
+      linear-gradient(to right, $primary-accent-color, #dddbe2),
     neutral-bg-secondary-gradient:
       radial-gradient(color.adjust(#aba4c6, $alpha: -0.05), #594b95),
   ),
   "light": (
     light-bg-primary: #d5d0e7,
-    light-bg-primary-gradient: linear-gradient(to right, #ffffff, #856fe2),
+    light-bg-primary-gradient:
+      linear-gradient(to right, $primary-light-color, #856fe2),
     light-bg-secondary-gradient:
-      radial-gradient(color.adjust(#ffffff, $alpha: -0.05), #9582e6),
+      radial-gradient(
+        color.adjust($primary-light-color, $alpha: -0.05),
+        #c1b2ff
+      ),
   ),
 );
 
 $theme-text-colors: (
   "dark": (
-    dark-primary-text: #ffff,
+    dark-primary-text: $primary-light-color,
     dark-secondary-text: #000000,
   ),
   "neutral": (
-    neutral-primary-text: #ffff,
+    neutral-primary-text: $primary-light-color,
     neutral-secondary-text: #000000,
   ),
   "light": (
-    light-primary-text: #4b34b0,
+    light-primary-text: $primary-light-text-color,
     light-secondary-text: #000000,
   ),
 );
@@ -87,12 +101,6 @@ $theme-text-colors: (
     font-size: setResponsiveFontSize($fontSize);
   }
 }
-
-$fs-default: 0.875rem;
-$primary-border-color: #ffffff;
-$primary-accent-color: #c0b7e8;
-$neutral-color: #8176af;
-$bg-light: #bbb7d0;
 
 .fw-bold {
   font-weight: 700;
@@ -147,21 +155,21 @@ $bg-light: #bbb7d0;
 .secondary-btn {
   @include btn(154px);
   background-color: transparent;
-  border: 2px solid $primary-border-color;
+  border: 2px solid $primary-light-color;
 }
 
 .theme-btn {
   &-dark {
     @include btn(30px, 15px);
-    border: 1px solid $primary-border-color;
+    border: 1px solid $primary-light-color;
   }
   &-neutral {
     @include btn(30px, 15px);
-    border: 1px solid $primary-border-color;
+    border: 1px solid $primary-light-color;
   }
   &-light {
     @include btn(30px, 15px);
-    border: 1px solid $primary-border-color;
+    border: 1px solid $primary-light-color;
   }
 }
 
@@ -213,15 +221,28 @@ $bg-light: #bbb7d0;
   height: 72px;
   background-color: transparent;
   outline: none;
-  border: 2px solid $primary-border-color;
   border-radius: 40px;
   padding-left: 42px;
-  &::placeholder {
-    color: #ffff;
-  }
   &:focus::placeholder {
     color: transparent;
   }
+  &-dark,
+  &-neutral {
+    border: 2px solid $primary-light-color;
+    &::placeholder {
+      color: #ffff;
+    }
+  }
+  &-light {
+    border: 2px solid $primary-light-color;
+    &::placeholder {
+      color: $primary-light-text-color;
+    }
+  }
+}
+
+.error-text {
+  color: $error-color;
 }
 
 body {

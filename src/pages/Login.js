@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import axios from "axios";
 import FormField from "../components/FormField";
 import Button from "../components/Button";
 import { ThemeContext } from "../context/Theme";
@@ -18,34 +19,38 @@ function Login({ setToken, setPage }) {
   const { theme } = useContext(ThemeContext);
   const [username, setUserName] = useState();
   const [password, setPassword] = useState();
+  const [formError, setFormError] = useState(false);
 
   const login = (username, password) => {
     let token;
-    const userData = [
-      {
-        username: "admin",
-        password: "12345",
-      },
-      {
-        username: "Valentyna",
-        password: "12345",
-      },
-    ];
-    userData.forEach((data) => {
-      if (data.username === username && data.password === password) {
-        sessionStorage.setItem("username", username);
-        token = createRandomString(50);
-        sessionStorage.setItem("authToken", token);
-        setPage("landing");
-      }
-    });
+    axios
+      .get("./users.json")
+      .then(function (response) {
+        response.data.forEach((data) => {
+          if (data.username === username && data.password === password) {
+            sessionStorage.setItem("username", username);
+            token = createRandomString(50);
+            sessionStorage.setItem("authToken", token);
+            setPage("landing");
+          }
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
     return token;
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setToken(login(username, password));
+    const token = login(username, password);
+    if (token) {
+      setToken(token);
+      setFormError(false);
+    } else {
+      setFormError(true);
+    }
   };
 
   const navigateToSignup = (event) => {
@@ -59,17 +64,22 @@ function Login({ setToken, setPage }) {
       onSubmit={handleSubmit}
     >
       <FormField
-        classValue={`form-field username-field ${theme}-primary-text`}
+        classValue={`form-field username-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Username"}
         type="text"
         onInputHandler={(event) => setUserName(event.target.value)}
       />
       <FormField
-        classValue={`form-field password-field ${theme}-primary-text`}
+        classValue={`form-field password-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Password"}
         type="password"
         onInputHandler={(event) => setPassword(event.target.value)}
       />
+      {formError && (
+        <label className="error-text">
+          The username or password is invalid
+        </label>
+      )}
       <Button
         classValue={`primary-btn primary-btn-animation-${theme} ${theme}-bg-primary-gradient`}
         btnText={"Log In"}

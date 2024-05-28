@@ -19,7 +19,7 @@
     top: 230px;
   }
   &-neutral {
-    opacity: 0.3;
+    opacity: 0.1;
   }
   &-light {
     opacity: 0;
@@ -32,6 +32,8 @@
   column-gap: 280px;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
   &-img-dark {
     filter: drop-shadow(0px 0px 5px #000000);
   }

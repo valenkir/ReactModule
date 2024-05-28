@@ -30,23 +30,23 @@ function Signup({ setToken, setPage }) {
       onSubmit={handleSubmit}
     >
       <FormField
-        classValue={`form-field username-field ${theme}-primary-text`}
+        classValue={`form-field username-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Username"}
         type="text"
         onInputHandler={(event) => setUserName(event.target.value)}
       />
       <FormField
-        classValue={`form-field password-field ${theme}-primary-text`}
+        classValue={`form-field password-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Password"}
         type="password"
       />
       <FormField
-        classValue={`form-field password-field ${theme}-primary-text`}
+        classValue={`form-field password-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Confirm password"}
         type="password"
       />
       <FormField
-        classValue={`form-field password-field ${theme}-primary-text`}
+        classValue={`form-field password-field ${theme}-primary-text form-field-${theme}`}
         placeholder={"Email"}
         type="email"
       />
