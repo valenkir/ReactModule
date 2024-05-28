@@ -26,17 +26,17 @@ function Main({ setToken, setPage }) {
         />
       )}
       <img
-        className="Landing-bg-line Landing-bg-line-1"
+        className={`Landing-bg-line Landing-bg-line-1 Landing-bg-line-${theme}`}
         src={bgLine1}
         alt="Background image: decorative line"
       />
       <img
-        className="Landing-bg-line Landing-bg-line-2"
+        className={`Landing-bg-line Landing-bg-line-2 Landing-bg-line-${theme}`}
         src={bgLine2}
         alt="Background image: decorative line"
       />
       <img
-        className="Landing-bg-line Landing-bg-line-3"
+        className={`Landing-bg-line Landing-bg-line-3 Landing-bg-line-${theme}`}
         src={bgLine3}
         alt="Background image: decorative line"
       />
