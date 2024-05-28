@@ -11,15 +11,16 @@ import bgLine4 from "../assets/images/bg-line-4.svg";
 
 function Main({ setToken, setPage }) {
   const { theme } = useContext(ThemeContext);
-  const [welcomeModalWindow, setWelcomeModalWindow] = useState("show");
+  const [welcomeModalWindow, setWelcomeModalWindow] = useState();
 
   const handleOkBtn = () => {
     setWelcomeModalWindow("hide");
+    sessionStorage.setItem("welcomeModalWindow", "hide");
   };
 
   return (
     <main>
-      {welcomeModalWindow === "show" && (
+      {!sessionStorage.getItem("welcomeModalWindow") && (
         <ModalWindow
           classValue={`${theme}-bg-secondary-gradient ModalWindow-container d-flex`}
           okBtnHandler={handleOkBtn}
@@ -45,11 +46,7 @@ function Main({ setToken, setPage }) {
         src={bgLine4}
         alt="Background image: decorative line"
       />
-      <Header
-        setToken={setToken}
-        setWelcomeModalWindow={setWelcomeModalWindow}
-        setPage={setPage}
-      />
+      <Header setToken={setToken} setPage={setPage} />
       <Hero />
       <HeroContacts />
     </main>

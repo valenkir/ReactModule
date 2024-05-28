@@ -16,13 +16,12 @@ const joinHydraClickHandler = () => {
   console.log("Here should be the contact form");
 };
 
-function Header({ setToken, setWelcomeModalWindow, setPage }) {
+function Header({ setToken, setPage }) {
   const { theme, changeTheme } = useContext(ThemeContext);
 
   const logoutHandler = () => {
     setToken(null);
     setPage("login");
-    setWelcomeModalWindow("show");
     sessionStorage.clear();
   };
 
