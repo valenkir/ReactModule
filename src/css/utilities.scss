@@ -18,7 +18,7 @@ $primary-neutral-color: #8176af;
 $primary-light-color: #ffffff;
 $primary-accent-color: #c0b7e8;
 $primary-light-text-color: #4b34b0;
-$error-color: #ff044b;
+$error-color: #ff4176;
 
 $fontSizes: (
   16: 1rem,
@@ -238,6 +238,9 @@ $theme-text-colors: (
     &::placeholder {
       color: $primary-light-text-color;
     }
+  }
+  &-invalid {
+    border: 2px solid $error-color;
   }
 }
 

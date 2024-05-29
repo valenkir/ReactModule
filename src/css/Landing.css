@@ -21,7 +21,7 @@
 }
 
 .neutral-bg-primary-gradient {
-  background: linear-gradient(to right, #c5bbf2, #dddbe2);
+  background: linear-gradient(to right, #c0b7e8, #dddbe2);
 }
 
 .neutral-bg-secondary-gradient {
@@ -37,11 +37,11 @@
 }
 
 .light-bg-secondary-gradient {
-  background: radial-gradient(rgba(255, 255, 255, 0.95), #9582e6);
+  background: radial-gradient(rgba(255, 255, 255, 0.95), #c1b2ff);
 }
 
 .dark-primary-text {
-  color: white;
+  color: #ffffff;
 }
 
 .dark-secondary-text {
@@ -49,7 +49,7 @@
 }
 
 .neutral-primary-text {
-  color: white;
+  color: #ffffff;
 }
 
 .neutral-secondary-text {
@@ -227,21 +227,40 @@
   height: 72px;
   background-color: transparent;
   outline: none;
-  border: 2px solid #ffffff;
   border-radius: 40px;
   padding-left: 42px;
-}
-.form-field::-moz-placeholder {
-  color: white;
-}
-.form-field::placeholder {
-  color: white;
 }
 .form-field:focus::-moz-placeholder {
   color: transparent;
 }
 .form-field:focus::placeholder {
   color: transparent;
+}
+.form-field-dark, .form-field-neutral {
+  border: 2px solid #ffffff;
+}
+.form-field-dark::-moz-placeholder, .form-field-neutral::-moz-placeholder {
+  color: white;
+}
+.form-field-dark::placeholder, .form-field-neutral::placeholder {
+  color: white;
+}
+.form-field-light {
+  border: 2px solid #ffffff;
+}
+.form-field-light::-moz-placeholder {
+  color: #4b34b0;
+}
+.form-field-light::placeholder {
+  color: #4b34b0;
+}
+.form-field-invalid {
+  border: none;
+  outline: 2px solid #ff4176;
+}
+
+.error-text {
+  color: #ff4176;
 }
 
 body {
@@ -279,6 +298,12 @@ a:hover {
 .Landing-bg-line-4 {
   top: 230px;
 }
+.Landing-bg-line-neutral {
+  opacity: 0.1;
+}
+.Landing-bg-line-light {
+  opacity: 0;
+}
 
 .Landing-hero {
   display: grid;
@@ -287,6 +312,8 @@ a:hover {
        column-gap: 280px;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 .Landing-hero-img-dark {
   filter: drop-shadow(0px 0px 5px #000000);

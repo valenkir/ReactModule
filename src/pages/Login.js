@@ -64,16 +64,22 @@ function Login({ setToken, setPage }) {
       onSubmit={handleSubmit}
     >
       <FormField
-        classValue={`form-field username-field ${theme}-primary-text form-field-${theme}`}
+        classValue={`form-field username-field ${theme}-primary-text form-field-${theme} ${
+          formError && "form-field-invalid"
+        }`}
         placeholder={"Username"}
         type="text"
         onInputHandler={(event) => setUserName(event.target.value)}
+        required
       />
       <FormField
-        classValue={`form-field password-field ${theme}-primary-text form-field-${theme}`}
+        classValue={`form-field password-field ${theme}-primary-text form-field-${theme} ${
+          formError && "form-field-invalid"
+        }`}
         placeholder={"Password"}
         type="password"
         onInputHandler={(event) => setPassword(event.target.value)}
+        required
       />
       {formError && (
         <label className="error-text">
